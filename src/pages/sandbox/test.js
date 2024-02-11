@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 
 // let req = new XMLHttpRequest();
@@ -17,7 +17,7 @@ import Link from "next/link";
 // console.log("req", req)
 // console.log("response", response)
 
-const test = () => {
+const Test = () => {
   const BIN_ID = "65c7d94b1f5677401f2d9486";
   const API_KEY =
     "$2a$10$qe1GTnVymPReZ4MJLD7tUOrJvf6CshpjpPgjwrpht0NuKsDZcemc6";
@@ -113,4 +113,4 @@ const test = () => {
   );
 };
 
-export default test;
+export default Test;
