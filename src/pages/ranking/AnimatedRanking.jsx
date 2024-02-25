@@ -54,7 +54,7 @@ const AnimatedRanking = () => {
           <RankingItem
             key={item.id}
             id={item.id}
-            rank={item.rank}
+            rank={index + 1}
             name={item.name}
             points={item.points}
             image={item.image}
