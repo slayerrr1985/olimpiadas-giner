@@ -1,0 +1,44 @@
+.ranking-container {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column */
+  justify-content: center; /* Center items horizontally */
+  gap: 20px; /* Gap between items */
+  padding: 20px;
+}
+
+.mascots-list-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+//   display: flex;
+//   flex-direction: column;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Single column */
+  justify-content: center; /* Center items horizontally */
+  gap: 1px; /* Gap between items */
+}
+
+.actions-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 3px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+}

@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import App from "../App";
-import Section from "../Section";
+import App from "../pages/home/Home";
+import AnimatedRanking from "../pages/ranking/AnimatedRanking";
 
 const router = createBrowserRouter([
   {
@@ -9,8 +9,8 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/section",
-    element: <Section />,
+    path: "/mascot-ranking",
+    element: <AnimatedRanking />,
   },
 ]);
 

@@ -1,0 +1,68 @@
+.ranking-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column */
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Gap between items */
+    padding: 20px;
+  }
+  
+  .button-container {
+    position: fixed; /* Keep the button fixed */
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .ranking-item {
+    width: 100%; /* Full width */
+    max-width: 400px; /* Limit width to 400px */
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 5px 15px; /* Adjusted padding */
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .rank {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    margin-right: 15px; /* Adjusted margin */
+  }
+  
+  .name {
+    flex: 1;
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  
+  .image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
