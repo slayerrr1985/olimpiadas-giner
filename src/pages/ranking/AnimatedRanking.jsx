@@ -46,8 +46,8 @@ const AnimatedRanking = () => {
 
   return (
     <div className="animated-ranking">
-      <div className="ranking-container">
-        <Flipper flipKey={ranking.map((item) => item.id).join(",")}>
+      {/* <div className="ranking-container"> */}
+        <Flipper className="ranking-container" flipKey={ranking.map((item) => item.id).join(",")}>
           {ranking.map((item, index) => (
             <RankingItem
               key={item.id}
@@ -62,7 +62,7 @@ const AnimatedRanking = () => {
             />
           ))}
         </Flipper>
-      </div>
+      {/* </div> */}
       {/* <div className="mascots-list-container">
         {mascotsList.map((item) => {
           const indexInRanking = ranking.findIndex(

@@ -1,8 +1,8 @@
 .ranking-container {
   display: grid;
-  grid-template-columns: 1fr; /* Single column */
+  grid-template-columns: 1fr 1fr; /* Single column */
   justify-content: center; /* Center items horizontally */
-  gap: 20px; /* Gap between items */
+//   gap: 20px; /* Gap between items */
   padding: 20px;
 }
 
