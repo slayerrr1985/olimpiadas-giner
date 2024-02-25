@@ -46,24 +46,26 @@ const AnimatedRanking = () => {
 
   return (
     <div className="animated-ranking">
-      {/* <div className="ranking-container"> */}
-        <Flipper className="ranking-container" flipKey={ranking.map((item) => item.id).join(",")}>
-          {ranking.map((item, index) => (
-            <RankingItem
-              key={item.id}
-              id={item.id}
-              rank={item.rank}
-              name={item.name}
-              points={item.points}
-              image={item.image}
-              isFirstRow={index < 1}
-              inputValue={inputs[index]}
-              onInputChange={(value) => handleInputChange(index, value)}
-            />
-          ))}
-        </Flipper>
-      {/* </div> */}
-      {/* <div className="mascots-list-container">
+      <Flipper
+        className="ranking-container"
+        flipKey={ranking.map((item) => item.id).join(",")}
+      >
+        {ranking.map((item, index) => (
+          <RankingItem
+            key={item.id}
+            id={item.id}
+            rank={item.rank}
+            name={item.name}
+            points={item.points}
+            image={item.image}
+            isFirstRow={index < 1}
+            inputValue={inputs[index]}
+            onInputChange={(value) => handleInputChange(index, value)}
+          />
+        ))}
+      </Flipper>
+
+      <div className="mascots-list-container">
         {mascotsList.map((item) => {
           const indexInRanking = ranking.findIndex(
             (rankingItem) => rankingItem.id === item.id
@@ -82,7 +84,7 @@ const AnimatedRanking = () => {
             />
           );
         })}
-      </div> */}
+      </div>
 
       <div className="actions-container">
         <button onClick={shuffleRanking}>Shuffle Ranking</button>

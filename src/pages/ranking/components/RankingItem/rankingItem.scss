@@ -1,7 +1,8 @@
 .ranking-item {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  //   padding: 8px;
+  margin: 0 24px;
 }
 
 .ranking-item--first-row {
@@ -12,12 +13,13 @@
 }
 
 .ranking-item__info-container {
+  flex: 1;
   display: flex;
   align-items: center;
   background-color: #f0f0f0;
   border-radius: 8px;
   padding: 5px 15px;
-  width: 280px;
+  //   width: 280px;
   justify-content: space-between;
 }
 
