@@ -1,14 +1,15 @@
 .ranking-item {
   display: flex;
   align-items: center;
-  //   padding: 8px;
   margin: 0 24px;
 }
 
 .ranking-item--first-row {
-  // height: 60px; /* Height for the first 3 rows */
-  .ranking-item-__rank {
-    background-color: purple;
+  .ranking-item__info-container {
+    outline: 2px solid #009f3d;
+  }
+  .ranking-item__rank {
+    background-color: #009f3d;
   }
 }
 
@@ -16,10 +17,9 @@
   flex: 1;
   display: flex;
   align-items: center;
-  background-color: #f0f0f0;
+  background-color: #f2f2f2;
   border-radius: 8px;
-  padding: 5px 15px;
-  //   width: 280px;
+  padding: 5px 20px 5px 10px;
   justify-content: space-between;
 }
 
@@ -32,27 +32,30 @@
   font-size: 20px;
   font-weight: bold;
   border-radius: 50%;
-  background-color: orange;
+  background-color: #f4c300;
   color: white;
-  margin-right: 15px;
+  margin-right: 20px;
 }
 
 .ranking-item__name {
   flex: 1;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Preahvihear", sans-serif;
 }
 
 .ranking-item__image {
   width: 40px;
   height: 40px;
-  //   border-radius: 50%;
   margin-right: 10px;
 }
 
 .ranking-item__points {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
+  letter-spacing: -1px;
+  font-family: "Preahvihear", sans-serif;
 }
 
 .ranking-item__input-container {
@@ -65,12 +68,12 @@
 }
 
 .ranking-item__points-input {
-  // padding: 5px 10px;
-  border: 2px solid #ccc;
+  font-family: "Preahvihear", sans-serif;
+  border: 3px solid #f2f2f2;
   border-radius: 5px;
-  font-size: 16px;
-  width: 40px;
-  height: 40px;
+  font-size: 22px;
+  width: 42px;
+  height: 42px;
   text-align: center;
   margin-left: 15px;
 }

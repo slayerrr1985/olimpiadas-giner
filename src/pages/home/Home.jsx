@@ -1,15 +1,16 @@
-import "./home.scss";
 import { Link } from "react-router-dom";
 import RingsImg from "../../assets/rings.svg";
+import "./home.scss";
+
 function App() {
   return (
     <div className="home-page">
-      <h1 className="title">Olimpiadas Giner de los Ríos</h1>
-      <img className="logo" src={RingsImg} alt="" />
-      <div className="card">
-        <div className="link">
-          <Link to="/mascot-ranking">Mascot Ranking</Link>
-        </div>
+      <h1 className="home-page__title">Olimpiadas Giner de los Ríos</h1>
+      <img className="home-page__logo" src={RingsImg} alt="" />
+      <div className="home-page__card">
+        <Link className="home-page__link" to="/mascot-ranking">
+          OLYMPIC MASCOT VOTING CEREMONY
+        </Link>
       </div>
     </div>
   );

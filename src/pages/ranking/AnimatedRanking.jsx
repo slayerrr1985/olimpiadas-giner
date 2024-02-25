@@ -1,44 +1,49 @@
 import React, { useState } from "react";
-import { Flipper, Flipped } from "react-flip-toolkit";
+import { Link } from "react-router-dom";
+import { Flipper } from "react-flip-toolkit";
 import mascotsData from "./mascotsData";
-// import "./animatedRanking.scss";
 import RankingItem from "./components/RankingItem/RankingItem";
 import MascotsListItem from "./components/MascotsListItem/MascotsListItem";
+import RingsImg from "../../assets/rings.svg";
+import "./animatedRanking.scss";
 
 const AnimatedRanking = () => {
   const [ranking, setRanking] = useState(mascotsData);
-  const [mascotsList, setMascotslist] = useState(mascotsData);
-
   const [inputs, setInputs] = useState(Array(ranking.length).fill(0));
 
-  const sortByPoints = () => {
-    const sorted = [...ranking].sort((a, b) => b.points - a.points);
-    setRanking(sorted);
-  };
+  //   const sortByPoints = () => {
+  //     const sorted = [...ranking].sort((a, b) => b.points - a.points);
+  //     setRanking(sorted);
+  //     console.log("sortByPoints");
+  //   };
 
-  const updateMascotsListSortedById = () => {
-    const sorted = [...ranking].sort((a, b) => a.id - b.id);
-    setMascotslist(sorted);
-  };
+  //   const shuffleRanking = () => {
+  //     const newRanking = [...ranking].sort(() => Math.random() - 0.5);
+  //     setRanking(newRanking);
+  //   };
 
-  const shuffleRanking = () => {
-    const newRanking = [...ranking].sort(() => Math.random() - 0.5);
-    setRanking(newRanking);
-  };
+  //   const sumPoints = () => {
+  //     const updatedRanking = ranking.map((item, index) => ({
+  //       ...item,
+  //       points: item.points + inputs[index],
+  //     }));
+  //     setRanking(updatedRanking);
+  //     setInputs(Array(ranking.length).fill(0));
+  //     console.log("sum");
+  //   };
 
-  const sumPoints = () => {
-    const updatedRanking = ranking.map((item, index) => ({
-      ...item,
-      points: item.points + inputs[index],
-    }));
+  const vote = () => {
+    const updatedRanking = ranking
+      .map((item, index) => ({
+        ...item,
+        points: item.points + inputs[index],
+      }))
+      .sort((a, b) => b.points - a.points);
     setRanking(updatedRanking);
     setInputs(Array(ranking.length).fill(0));
-    updateMascotsListSortedById();
   };
 
   const handleInputChange = (index, value) => {
-    console.log("value", value);
-
     const newInputs = [...inputs];
     newInputs[index] = value;
     setInputs(newInputs);
@@ -46,6 +51,18 @@ const AnimatedRanking = () => {
 
   return (
     <div className="animated-ranking">
+      <div className="animated-ranking__header">
+        <Link to="/">
+          <img className="animated-ranking__logo" src={RingsImg} alt="" />
+        </Link>
+        <div className="animated-ranking__title">
+          Olympic mascot voting ceremony
+        </div>
+        <Link to="/">
+          <img className="animated-ranking__logo" src={RingsImg} alt="" />
+        </Link>
+      </div>
+
       <Flipper
         className="ranking-container"
         flipKey={ranking.map((item) => item.id).join(",")}
@@ -66,12 +83,12 @@ const AnimatedRanking = () => {
       </Flipper>
 
       <div className="mascots-list-container">
-        {mascotsList.map((item) => {
+        {mascotsData.map((item) => {
           const indexInRanking = ranking.findIndex(
             (rankingItem) => rankingItem.id === item.id
           );
           const inputValue =
-            indexInRanking !== -1 ? inputs[indexInRanking] : ""; // Set input value based on index in ranking
+            indexInRanking !== -1 ? inputs[indexInRanking] : "";
           return (
             <MascotsListItem
               key={item.id}
@@ -84,13 +101,16 @@ const AnimatedRanking = () => {
             />
           );
         })}
+        <button className="vote-button" onClick={vote}>
+          VOTE!
+        </button>
       </div>
 
-      <div className="actions-container">
+      {/* <div className="actions-container">
         <button onClick={shuffleRanking}>Shuffle Ranking</button>
         <button onClick={sortByPoints}>Sort by Points</button>
         <button onClick={sumPoints}>Sum Points</button>
-      </div>
+      </div> */}
     </div>
   );
 };

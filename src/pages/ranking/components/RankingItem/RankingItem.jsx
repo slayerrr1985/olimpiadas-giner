@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { Flipper, Flipped } from "react-flip-toolkit";
-import mascotsData from "../../mascotsData";
-// import "../../animatedRanking.scss";
+import { Flipped } from "react-flip-toolkit";
 import "./rankingItem.scss";
 
 const RankingItem = ({
@@ -14,7 +12,9 @@ const RankingItem = ({
   inputValue,
   onInputChange,
 }) => {
-  const rowClass = isFirstRow ? "ranking-item--first-row" : "ranking-item--regular-row";
+  const rowClass = isFirstRow
+    ? "ranking-item--first-row"
+    : "ranking-item--regular-row";
 
   const handleChange = (event) => {
     const value = event.target.value.trim(); // Remove leading and trailing whitespace

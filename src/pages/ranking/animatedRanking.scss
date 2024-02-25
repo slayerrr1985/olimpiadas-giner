@@ -1,47 +1,83 @@
+.animated-ranking__header {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+}
+
+.animated-ranking__title {
+  width: 90%;
+  text-align: center;
+  flex: 1;
+  font-size: 64px;
+  font-weight: bold;
+  font-family: "League Gothic", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  line-height: 64px;
+}
+
+.animated-ranking__logo {
+  max-width: 150px;
+  width: 90%;
+  height: auto;
+}
+
 .ranking-container {
-  padding: 20px;
+  padding: 24px 42px 42px 42px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 16px;
   height: 450px;
-  border: 1px solid darkslategrey;
 }
 
 .mascots-list-container {
-  //   position: fixed;
-  //   top: 20px;
-  //   right: 20px;
   display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   padding: 20px;
-  height: 130px;
-  width: 800px;
+  max-width: 1100px;
   gap: 8px;
-//   background-color: red;
+  margin: 0 auto;
+  justify-content: center;
 }
 
-.actions-container {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-
-  button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin: 3px;
-  }
-
-  button:hover {
-    background-color: #0056b3;
-  }
+.vote-button {
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0085c7;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+  width: 142px;
+  height: 42px;
 }
+
+.vote-button:hover {
+  background-color: #31b3f5;
+}
+
+// .actions-container {
+//   position: fixed;
+//   bottom: 20px;
+//   right: 20px;
+//   display: flex;
+//   flex-direction: column;
+
+//   button {
+//     padding: 10px 20px;
+//     font-size: 16px;
+//     border: none;
+//     border-radius: 5px;
+//     background-color: #007bff;
+//     color: white;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+//     margin: 3px;
+//   }
+
+//   button:hover {
+//     background-color: #0056b3;
+//   }
+// }
