@@ -1,7 +1,7 @@
 .animated-ranking__header {
   display: flex;
   align-items: center;
-  padding: 18px 24px;
+  padding: 32px 24px 18px 24px;
 }
 
 .animated-ranking__title {
@@ -23,7 +23,7 @@
 }
 
 .ranking-container {
-  padding: 24px 42px 24px 42px;
+  padding: 26px 42px 24px 42px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -35,7 +35,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
-  max-width: 1100px;
+  max-width: 1000px;
   gap: 8px;
   margin: 0 auto;
   justify-content: center;
@@ -50,8 +50,8 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-weight: bold;
-  width: 142px;
-  height: 42px;
+  width: 132px;
+  height: 38px;
 }
 
 .vote-button:hover {
