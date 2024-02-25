@@ -42,16 +42,16 @@
 }
 
 .vote-button {
-  font-size: 16px;
+  font-size: 28px;
   border: none;
   border-radius: 5px;
   background-color: #0085c7;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-weight: bold;
   width: 132px;
   height: 38px;
+  font-family: "League Gothic", sans-serif;
 }
 
 .vote-button:hover {
