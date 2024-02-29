@@ -7,11 +7,22 @@ const RankingItem = ({
   rank,
   name,
   image,
+  thumb,
   isFirstRow,
   points,
   inputValue,
   onInputChange,
 }) => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   const rowClass = isFirstRow
     ? "ranking-item--first-row"
     : "ranking-item--regular-row";
@@ -29,9 +40,9 @@ const RankingItem = ({
   return (
     <Flipped flipId={id}>
       <div className={`ranking-item ${rowClass}`}>
-        <div className="ranking-item__info-container">
+        <div className="ranking-item__info-container" onClick={handleOpenPopup}>
           <span className="ranking-item__rank">{rank}</span>
-          <img className="ranking-item__image" src={image} alt={name} />
+          <img className="ranking-item__image" src={thumb} alt={name} />
           <span className="ranking-item__name">{name}</span>
           <span className="ranking-item__points">{points}</span>
         </div>
@@ -46,6 +57,21 @@ const RankingItem = ({
             onChange={handleChange}
           />
         </div>
+
+        {isPopupOpen && (
+          <div
+            className="ranking-item__popup-overlay"
+            onClick={handleClosePopup}
+          >
+            <div className="ranking-item__popup">
+              <img
+                className="ranking-item__popup-image"
+                src={image}
+                alt={name}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </Flipped>
   );

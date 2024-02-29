@@ -11,27 +11,6 @@ const AnimatedRanking = () => {
   const [ranking, setRanking] = useState(mascotsData);
   const [inputs, setInputs] = useState(Array(ranking.length).fill(0));
 
-  //   const sortByPoints = () => {
-  //     const sorted = [...ranking].sort((a, b) => b.points - a.points);
-  //     setRanking(sorted);
-  //     console.log("sortByPoints");
-  //   };
-
-  //   const shuffleRanking = () => {
-  //     const newRanking = [...ranking].sort(() => Math.random() - 0.5);
-  //     setRanking(newRanking);
-  //   };
-
-  //   const sumPoints = () => {
-  //     const updatedRanking = ranking.map((item, index) => ({
-  //       ...item,
-  //       points: item.points + inputs[index],
-  //     }));
-  //     setRanking(updatedRanking);
-  //     setInputs(Array(ranking.length).fill(0));
-  //     console.log("sum");
-  //   };
-
   const vote = () => {
     const updatedRanking = ranking
       .map((item, index) => ({
@@ -75,6 +54,7 @@ const AnimatedRanking = () => {
             name={item.name}
             points={item.points}
             image={item.image}
+            thumb={item.thumb}
             isFirstRow={index < 1}
             inputValue={inputs[index]}
             onInputChange={(value) => handleInputChange(index, value)}
@@ -105,12 +85,6 @@ const AnimatedRanking = () => {
           VOTE!
         </button>
       </div>
-
-      {/* <div className="actions-container">
-        <button onClick={shuffleRanking}>Shuffle Ranking</button>
-        <button onClick={sortByPoints}>Sort by Points</button>
-        <button onClick={sumPoints}>Sum Points</button>
-      </div> */}
     </div>
   );
 };
