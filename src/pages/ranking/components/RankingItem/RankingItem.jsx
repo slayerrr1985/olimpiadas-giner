@@ -14,7 +14,6 @@ const RankingItem = ({
   onInputChange,
 }) => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
 
   const handleOpenPopup = () => {
     setIsPopupOpen(true);
@@ -22,10 +21,6 @@ const RankingItem = ({
 
   const handleClosePopup = () => {
     setIsPopupOpen(false);
-  };
-
-  const handleImageLoad = () => {
-    setIsLoading(false); // Marcar como no cargando cuando la imagen se ha cargado
   };
 
   const rowClass = isFirstRow
@@ -69,13 +64,10 @@ const RankingItem = ({
             onClick={handleClosePopup}
           >
             <div className="ranking-item__popup">
-              {isLoading && <div className="loading-spinner"></div>}
-
               <img
-                className={`ranking-item__popup-image ${isLoading ? "loading" : ""}`}
+                className="ranking-item__popup-image"
                 src={image}
                 alt={name}
-                onLoad={handleImageLoad}
               />
             </div>
           </div>
